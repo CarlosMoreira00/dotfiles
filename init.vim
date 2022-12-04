@@ -3,7 +3,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
-Plug 'scrooloose/syntastic'
+Plug 'dense-analysis/ale'
 call plug#end()
 
 " Global sets
@@ -50,24 +50,8 @@ let g:netrw_winsize=15
 " File edition 
 nnoremap <Leader>s :vsplit<CR>
 
-" syntactic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" Ale
+let b:ale_linters = ['eslint']
+let b:ale_linters = {'javascript': ['eslint']}
+let g:ale_completion_autoimport = 1
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_loc_list_height = 5
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_javascript_checkers = ['eslint']
-
-let g:syntastic_error_symbol = '❌'
-let g:syntastic_style_error_symbol = '❗'
-let g:syntastic_warning_symbol = '⚠️'
-let g:syntastic_style_warning_symbol = '💩'
-
-highlight link SyntasticErrorSign SignColumn
-highlight link SyntasticWarningSign SignColumn
-highlight link SyntasticStyleErrorSign SignColumn
-highlight link SyntasticStyleWarningSign SignColumn
