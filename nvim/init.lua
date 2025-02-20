@@ -1,4 +1,4 @@
-require 'plugins'
+equire 'plugins'
 require 'settings'
 
 -- lsp
@@ -7,24 +7,24 @@ local lspconfig = require('lspconfig')
 lspconfig.pyright.setup {}
 
 -- autocomplete
-local compe = require('compe')
-compe.setup({
-	enabled = true,
-	source = {
-		path = true,
-		buffer = true,
-		nvim_lsp = true
-	}
-})
+-- local compe = require('compe')
+-- compe.setup({
+--      enabled = true,
+--      source = {
+--              path = true,
+--              buffer = true,
+--              nvim_lsp = true
+--      }
+-- })
 
 -- lua-line
 require('lualine').setup({
-	options = {
-		icons_enabled = false,
-  	theme = 'iceberg_dark'
+        options = {
+                icons_enabled = false,
+        theme = 'iceberg_dark'
   },
-  	sections = {
-    	lualine_a = { 'mode' },
+        sections = {
+        lualine_a = { 'mode' },
       lualine_b = { 'branch' },
       lualine_c = { 'filename' },
       lualine_x = { 'filetype' },
