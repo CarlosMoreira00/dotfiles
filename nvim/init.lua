@@ -1,4 +1,4 @@
-equire 'plugins'
+require 'plugins'
 require 'settings'
 
 -- lsp
