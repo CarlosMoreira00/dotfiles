@@ -23,9 +23,6 @@ opt.foldenable = true
 opt.foldlevel = 99         
 opt.foldlevelstart = 99 
 
--- wsl
-vim.cmd [[ set fileformats=unix,dos ]]
-
 -- Theme
 vim.cmd [[ set background=dark ]]
 vim.cmd [[ colorscheme jellybeans ]]
@@ -45,6 +42,7 @@ opt.wrap = false
 opt.signcolumn = 'yes'
 opt.showmatch = true
 opt.showmode = false
+
 --opt.foldmethod = 'marker'
 opt.splitright = true
 opt.splitbelow = true
@@ -162,3 +160,21 @@ local cmp = require'cmp'
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
   require('lspconfig').ts_ls.setup { capabilities = capabilities }
 	require('lspconfig').pyright.setup { capabilities = capabilities }
+
+	-- Vim tmux
+cmd = {
+	"TmuxNavigateLeft",
+	"TmuxNavigateDown",
+	"TmuxNavigateUp",
+	"TmuxNavigateRight",
+	"TmuxNavigatePrevious",
+	"TmuxNavigatorProcessList",
+ }
+
+keys = {
+	{ "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+	{ "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+	{ "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+	{ "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+	{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+}
